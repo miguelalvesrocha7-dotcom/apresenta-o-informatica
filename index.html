@@ -12,112 +12,112 @@
   <style>
     * { box-sizing: border-box; }
     html, body { height: 100%; margin: 0; padding: 0; }
-   
+    
     .gradient-bg {
       background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
     }
-   
+    
     .gradient-blue {
       background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
     }
-   
+    
     .card-hover {
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
-   
+    
     .card-hover:hover {
       transform: translateY(-8px);
       box-shadow: 0 20px 40px rgba(37, 99, 235, 0.3);
     }
-   
+    
     .btn-primary {
       background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
       transition: all 0.3s ease;
     }
-   
+    
     .btn-primary:hover {
       background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
       transform: translateY(-2px);
       box-shadow: 0 10px 30px rgba(37, 99, 235, 0.4);
     }
-   
+    
     .floating {
       animation: float 3s ease-in-out infinite;
     }
-   
+    
     @keyframes float {
       0%, 100% { transform: translateY(0px); }
       50% { transform: translateY(-10px); }
     }
-   
+    
     .pulse-glow {
       animation: pulseGlow 2s ease-in-out infinite;
     }
-   
+    
     @keyframes pulseGlow {
       0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
       50% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.6); }
     }
-   
+    
     .progress-bar {
       background: linear-gradient(90deg, #2563eb 0%, #3b82f6 50%, #60a5fa 100%);
       background-size: 200% 100%;
       animation: progressShine 2s linear infinite;
     }
-   
+    
     @keyframes progressShine {
       0% { background-position: 200% 0; }
       100% { background-position: -200% 0; }
     }
-   
+    
     .modal-overlay {
       backdrop-filter: blur(8px);
     }
-   
+    
     .slide-up {
       animation: slideUp 0.5s ease-out;
     }
-   
+    
     @keyframes slideUp {
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
-   
+    
     .fade-in {
       animation: fadeIn 0.6s ease-out;
     }
-   
+    
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
-   
+    
     .typing-effect {
       overflow: hidden;
       border-right: 3px solid #3b82f6;
       white-space: nowrap;
       animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
     }
-   
+    
     @keyframes typing {
       from { width: 0; }
       to { width: 100%; }
     }
-   
+    
     @keyframes blink-caret {
       from, to { border-color: transparent; }
       50% { border-color: #3b82f6; }
     }
-   
+    
     .icon-bounce:hover svg {
       animation: bounce 0.5s ease-in-out;
     }
-   
+    
     @keyframes bounce {
       0%, 100% { transform: scale(1); }
       50% { transform: scale(1.2); }
     }
-   
+    
     .particle {
       position: absolute;
       width: 4px;
@@ -127,14 +127,14 @@
       opacity: 0.6;
       animation: particleFloat 8s linear infinite;
     }
-   
+    
     @keyframes particleFloat {
       0% { transform: translateY(100%) rotate(0deg); opacity: 0; }
       10% { opacity: 0.6; }
       90% { opacity: 0.6; }
       100% { transform: translateY(-100%) rotate(720deg); opacity: 0; }
     }
-   
+    
     .scrollbar-hide::-webkit-scrollbar { display: none; }
     .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
   </style>
@@ -152,14 +152,14 @@
         </svg>
        </div><span class="text-xl font-bold text-white" style="font-family: 'Space Grotesk', sans-serif;">InovaCode</span>
       </div>
-      <div class="hidden md:flex items-center gap-8"><a href="#jogos" class="text-slate-300 hover:text-white transition-colors text-sm font-medium">Jogos</a> <a href="#informatica" class="text-slate-300 hover:text-white transition-colors text-sm font-medium">Informática</a> <a href="#laboratorio" class="text-slate-300 hover:text-white transition-colors text-sm font-medium">Laboratório</a> <a href="#progresso" class="text-slate-300 hover:text-white transition-colors text-sm font-medium">Progresso</a> <a href="#sobre" class="text-slate-300 hover:text-white transition-colors text-sm font-medium">Sobre</a>
+      <div class="hidden md:flex items-center gap-8"><a href="#jogos" class="text-slate-300 hover:text-white transition-colors text-sm font-medium">Jogos</a> <a href="#informatica" class="text-slate-300 hover:text-white transition-colors text-sm font-medium">Informática</a> <a href="#profissional" class="text-slate-300 hover:text-white transition-colors text-sm font-medium">Profissional</a> <a href="#laboratorio" class="text-slate-300 hover:text-white transition-colors text-sm font-medium">Laboratório</a> <a href="#progresso" class="text-slate-300 hover:text-white transition-colors text-sm font-medium">Progresso</a> <a href="#sobre" class="text-slate-300 hover:text-white transition-colors text-sm font-medium">Sobre</a>
       </div><button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg bg-slate-800 text-white">
        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
        </svg></button>
      </div>
     </div><!-- Mobile Menu -->
     <div id="mobileMenu" class="hidden md:hidden bg-slate-800 border-t border-slate-700">
-     <div class="px-4 py-4 space-y-3"><a href="#jogos" class="block text-slate-300 hover:text-white py-2">Jogos</a> <a href="#informatica" class="block text-slate-300 hover:text-white py-2">Informática</a> <a href="#laboratorio" class="block text-slate-300 hover:text-white py-2">Laboratório</a> <a href="#progresso" class="block text-slate-300 hover:text-white py-2">Progresso</a> <a href="#sobre" class="block text-slate-300 hover:text-white py-2">Sobre</a>
+     <div class="px-4 py-4 space-y-3"><a href="#jogos" class="block text-slate-300 hover:text-white py-2">Jogos</a> <a href="#informatica" class="block text-slate-300 hover:text-white py-2">Informática</a> <a href="#profissional" class="block text-slate-300 hover:text-white py-2">Profissional</a> <a href="#laboratorio" class="block text-slate-300 hover:text-white py-2">Laboratório</a> <a href="#progresso" class="block text-slate-300 hover:text-white py-2">Progresso</a> <a href="#sobre" class="block text-slate-300 hover:text-white py-2">Sobre</a>
      </div>
     </div>
    </nav><!-- Hero Section -->
@@ -346,6 +346,188 @@
        </div>
        <h3 class="text-lg font-bold text-white mb-2">Internet</h3>
        <p class="text-slate-400 text-sm">Navegação segura, pesquisas eficientes e uso responsável da web.</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Professional & Office Section -->
+   <section id="profissional" class="py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="text-center mb-16"><span class="inline-block px-4 py-2 bg-orange-100 text-orange-600 rounded-full text-sm font-medium mb-4"> 📊 Uso Profissional </span>
+      <h2 class="text-3xl sm:text-4xl font-bold text-slate-800 mb-4" style="font-family: 'Space Grotesk', sans-serif;">Ferramentas para o Mercado de Trabalho</h2>
+      <p class="text-slate-600 max-w-2xl mx-auto">Aprenda a usar as ferramentas profissionais mais demandadas pelas empresas e prepare-se para o futuro.</p>
+     </div><!-- Office Suite -->
+     <div class="mb-16">
+      <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-3xl p-8 md:p-12 border-2 border-blue-200 mb-8">
+       <div class="flex items-center gap-6 mb-8">
+        <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center flex-shrink-0">
+         <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+         </svg>
+        </div>
+        <div>
+         <h3 class="text-3xl font-bold text-slate-800 mb-2" style="font-family: 'Space Grotesk', sans-serif;">Microsoft Office 365</h3>
+         <p class="text-slate-600">Pacote profissional mais usado no mundo dos negócios</p>
+        </div>
+       </div>
+       <div class="grid grid-cols-1 md:grid-cols-3 gap-6"><!-- Word -->
+        <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-all">
+         <div class="w-14 h-14 rounded-xl bg-blue-100 flex items-center justify-center mb-4">
+          <svg class="w-8 h-8 text-blue-600" fill="currentColor" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-8-6z" /> <path d="M10 9h4m-4 3h6m-6 3h4" stroke="currentColor" stroke-width="2" fill="none" />
+          </svg>
+         </div>
+         <h4 class="text-lg font-bold text-slate-800 mb-3">Word</h4>
+         <ul class="space-y-2 text-sm text-slate-600">
+          <li>✓ Criar documentos profissionais</li>
+          <li>✓ Formatação avançada de texto</li>
+          <li>✓ Inserir tabelas e imagens</li>
+          <li>✓ Mala direta e correspondência</li>
+          <li>✓ Currículos e cartas de apresentação</li>
+         </ul>
+        </div><!-- Excel -->
+        <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-all">
+         <div class="w-14 h-14 rounded-xl bg-green-100 flex items-center justify-center mb-4">
+          <svg class="w-8 h-8 text-green-600" fill="currentColor" viewbox="0 0 24 24"><path d="M3 3h18v18H3V3zm2 2v14h14V5H5zm2 2h10v2H7V7zm0 3h10v2H7v-2zm0 3h10v2H7v-2z" />
+          </svg>
+         </div>
+         <h4 class="text-lg font-bold text-slate-800 mb-3">Excel</h4>
+         <ul class="space-y-2 text-sm text-slate-600">
+          <li>✓ Planilhas e análise de dados</li>
+          <li>✓ Fórmulas e funções avançadas</li>
+          <li>✓ Gráficos e dashboards</li>
+          <li>✓ Relatórios financeiros</li>
+          <li>✓ Previsões e análise de cenários</li>
+         </ul>
+        </div><!-- PowerPoint -->
+        <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-all">
+         <div class="w-14 h-14 rounded-xl bg-orange-100 flex items-center justify-center mb-4">
+          <svg class="w-8 h-8 text-orange-600" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+          </svg>
+         </div>
+         <h4 class="text-lg font-bold text-slate-800 mb-3">PowerPoint</h4>
+         <ul class="space-y-2 text-sm text-slate-600">
+          <li>✓ Apresentações impactantes</li>
+          <li>✓ Design profissional e templates</li>
+          <li>✓ Animações e transições</li>
+          <li>✓ Apresentações para reuniões</li>
+          <li>✓ Pitch de projetos e ideias</li>
+         </ul>
+        </div>
+       </div>
+      </div><!-- Professional Skills -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8"><!-- Why Office Matters -->
+       <div class="bg-white rounded-3xl p-8 shadow-lg border border-slate-100">
+        <h3 class="text-2xl font-bold text-slate-800 mb-6" style="font-family: 'Space Grotesk', sans-serif;">Por que dominar Office é essencial?</h3>
+        <div class="space-y-4">
+         <div class="flex gap-4">
+          <div class="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center flex-shrink-0 mt-1"><span class="text-blue-600 font-bold">1</span>
+          </div>
+          <div>
+           <h4 class="font-semibold text-slate-800 mb-1">95% das empresas usam Office</h4>
+           <p class="text-slate-600 text-sm">Praticamente todo trabalho administrativo e de gestão usa estas ferramentas</p>
+          </div>
+         </div>
+         <div class="flex gap-4">
+          <div class="w-8 h-8 rounded-lg bg-green-100 flex items-center justify-center flex-shrink-0 mt-1"><span class="text-green-600 font-bold">2</span>
+          </div>
+          <div>
+           <h4 class="font-semibold text-slate-800 mb-1">Diferencial no currículo</h4>
+           <p class="text-slate-600 text-sm">Domínio avançado dessas ferramentas é muito valorizado em processos seletivos</p>
+          </div>
+         </div>
+         <div class="flex gap-4">
+          <div class="w-8 h-8 rounded-lg bg-purple-100 flex items-center justify-center flex-shrink-0 mt-1"><span class="text-purple-600 font-bold">3</span>
+          </div>
+          <div>
+           <h4 class="font-semibold text-slate-800 mb-1">Produtividade profissional</h4>
+           <p class="text-slate-600 text-sm">Economize tempo e trabalhe de forma mais eficiente em qualquer ambiente corporativo</p>
+          </div>
+         </div>
+         <div class="flex gap-4">
+          <div class="w-8 h-8 rounded-lg bg-orange-100 flex items-center justify-center flex-shrink-0 mt-1"><span class="text-orange-600 font-bold">4</span>
+          </div>
+          <div>
+           <h4 class="font-semibold text-slate-800 mb-1">Compatibilidade universal</h4>
+           <p class="text-slate-600 text-sm">Qualquer empresa ou cliente reconhecerá e usará seus arquivos sem problemas</p>
+          </div>
+         </div>
+        </div>
+       </div><!-- Professional Applications -->
+       <div class="bg-white rounded-3xl p-8 shadow-lg border border-slate-100">
+        <h3 class="text-2xl font-bold text-slate-800 mb-6" style="font-family: 'Space Grotesk', sans-serif;">Aplicações profissionais reais</h3>
+        <div class="space-y-4">
+         <div class="p-4 rounded-xl bg-gradient-to-r from-blue-50 to-transparent border-l-4 border-blue-500">
+          <h4 class="font-semibold text-slate-800 mb-1">📈 Analista Financeiro</h4>
+          <p class="text-slate-600 text-sm">Usar Excel para criar planilhas de análise, gráficos de tendências e relatórios executivos</p>
+         </div>
+         <div class="p-4 rounded-xl bg-gradient-to-r from-green-50 to-transparent border-l-4 border-green-500">
+          <h4 class="font-semibold text-slate-800 mb-1">📄 Coordenador de Projetos</h4>
+          <p class="text-slate-600 text-sm">Documentar cronogramas em Word, controlar orçamentos em Excel e apresentar ao cliente em PowerPoint</p>
+         </div>
+         <div class="p-4 rounded-xl bg-gradient-to-r from-orange-50 to-transparent border-l-4 border-orange-500">
+          <h4 class="font-semibold text-slate-800 mb-1">🎯 Gerente Comercial</h4>
+          <p class="text-slate-600 text-sm">Controlar vendas em Excel, documentar contratos em Word e apresentar metas em PowerPoint</p>
+         </div>
+         <div class="p-4 rounded-xl bg-gradient-to-r from-purple-50 to-transparent border-l-4 border-purple-500">
+          <h4 class="font-semibold text-slate-800 mb-1">📊 RH Especialista</h4>
+          <p class="text-slate-600 text-sm">Gerenciar dados de funcionários em Excel, criar comunicados em Word e apresentações em PowerPoint</p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div><!-- Advanced Tips -->
+     <div class="bg-gradient-to-r from-indigo-50 to-blue-50 rounded-3xl p-8 md:p-12 border-2 border-indigo-200">
+      <h3 class="text-2xl font-bold text-slate-800 mb-8 text-center" style="font-family: 'Space Grotesk', sans-serif;">💡 Dicas Profissionais Avançadas</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+       <div class="bg-white rounded-xl p-6">
+        <div class="text-2xl mb-3">
+         📋
+        </div>
+        <h4 class="font-bold text-slate-800 mb-2">Modelos Profissionais</h4>
+        <p class="text-sm text-slate-600">Use templates prontos para ganhar tempo e manter consistência visual</p>
+       </div>
+       <div class="bg-white rounded-xl p-6">
+        <div class="text-2xl mb-3">
+         🔗
+        </div>
+        <h4 class="font-bold text-slate-800 mb-2">Integração entre apps</h4>
+        <p class="text-sm text-slate-600">Copie dados do Excel para Word e PowerPoint mantendo a formatação</p>
+       </div>
+       <div class="bg-white rounded-xl p-6">
+        <div class="text-2xl mb-3">
+         ☁️
+        </div>
+        <h4 class="font-bold text-slate-800 mb-2">OneDrive e Nuvem</h4>
+        <p class="text-sm text-slate-600">Acesse seus arquivos de qualquer lugar e colabore em tempo real</p>
+       </div>
+       <div class="bg-white rounded-xl p-6">
+        <div class="text-2xl mb-3">
+         🔐
+        </div>
+        <h4 class="font-bold text-slate-800 mb-2">Segurança Profissional</h4>
+        <p class="text-sm text-slate-600">Proteja documentos com senhas e controle permissões de acesso</p>
+       </div>
+      </div>
+     </div><!-- Industry Focus -->
+     <div class="mt-16 bg-white rounded-3xl p-8 md:p-12 shadow-lg border border-slate-100">
+      <h3 class="text-2xl font-bold text-slate-800 mb-8 text-center" style="font-family: 'Space Grotesk', sans-serif;">🏢 Setores que Mais Usam Office</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+       <div class="p-6 rounded-xl border-2 border-slate-200 hover:border-blue-500 transition-all"><span class="inline-block bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm font-semibold mb-3">Finanças</span>
+        <p class="text-slate-600 text-sm"><strong>Excel:</strong> Análise financeira, previsões orçamentárias e auditoria</p>
+       </div>
+       <div class="p-6 rounded-xl border-2 border-slate-200 hover:border-green-500 transition-all"><span class="inline-block bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm font-semibold mb-3">Administração</span>
+        <p class="text-slate-600 text-sm"><strong>Word:</strong> Ofícios, memorandos e documentação administrativa</p>
+       </div>
+       <div class="p-6 rounded-xl border-2 border-slate-200 hover:border-purple-500 transition-all"><span class="inline-block bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm font-semibold mb-3">Vendas</span>
+        <p class="text-slate-600 text-sm"><strong>PowerPoint:</strong> Apresentações de produtos e fechamento de negócios</p>
+       </div>
+       <div class="p-6 rounded-xl border-2 border-slate-200 hover:border-orange-500 transition-all"><span class="inline-block bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-sm font-semibold mb-3">RH</span>
+        <p class="text-slate-600 text-sm"><strong>Excel + Word:</strong> Gestão de pessoal e documentação de contratos</p>
+       </div>
+       <div class="p-6 rounded-xl border-2 border-slate-200 hover:border-red-500 transition-all"><span class="inline-block bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-semibold mb-3">Educação</span>
+        <p class="text-slate-600 text-sm"><strong>Word:</strong> Planos de aula, avaliações e relatórios de alunos</p>
+       </div>
+       <div class="p-6 rounded-xl border-2 border-slate-200 hover:border-indigo-500 transition-all"><span class="inline-block bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm font-semibold mb-3">Consultoria</span>
+        <p class="text-slate-600 text-sm"><strong>Todos:</strong> Relatórios, dados e apresentações para clientes</p>
+       </div>
       </div>
      </div>
     </div>
@@ -585,6 +767,7 @@
        <ul class="space-y-2">
         <li><a href="#jogos" class="text-slate-400 hover:text-white transition-colors text-sm">Jogos</a></li>
         <li><a href="#informatica" class="text-slate-400 hover:text-white transition-colors text-sm">Informática</a></li>
+        <li><a href="#profissional" class="text-slate-400 hover:text-white transition-colors text-sm">Profissional</a></li>
         <li><a href="#laboratorio" class="text-slate-400 hover:text-white transition-colors text-sm">Laboratório</a></li>
         <li><a href="#sobre" class="text-slate-400 hover:text-white transition-colors text-sm">Sobre</a></li>
        </ul>
@@ -724,10 +907,10 @@
           const heroTitle = document.getElementById('heroTitle');
           const heroSubtitle = document.getElementById('heroSubtitle');
           const labTitle = document.getElementById('labTitle');
-         
+          
           if (heroTitle) {
             const title = config.hero_title || defaultConfig.hero_title;
-            heroTitle.innerHTML = title.includes('Brincando')
+            heroTitle.innerHTML = title.includes('Brincando') 
               ? title.replace('Brincando', '<span class="text-blue-400">Brincando</span>')
               : title;
           }
@@ -772,7 +955,7 @@
     // Mobile menu toggle
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
-   
+    
     mobileMenuBtn.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
     });
@@ -794,7 +977,7 @@
       if (!game) return;
 
       let content = '';
-     
+      
       if (gameId === 'quiz') {
         currentQuestion = 0;
         quizScore = 0;
@@ -810,180 +993,135 @@
       } else if (gameId === 'seguranca') {
         content = renderSegurancaGame();
       }
-     
+      
       modalContent.innerHTML = content;
       gameModal.classList.remove('hidden');
       document.body.style.overflow = 'hidden';
     }
 
-    // JOGO 1: Lógica com Blocos - MELHORADO
-    let blocoSequence = [];
-    let blocoCorrect = ['1', '1', '2', '1'];
-   
+    // JOGO 1: Lógica com Blocos
     function renderBlocoGame() {
       return `
-        <div class="p-8 max-w-2xl">
+        <div class="p-8">
           <div class="text-center mb-6">
             <div class="text-5xl mb-3">🧩</div>
             <h2 class="text-2xl font-bold text-slate-800" style="font-family: 'Space Grotesk', sans-serif;">Lógica com Blocos</h2>
-            <p class="text-slate-500 text-sm">Programe o robô para chegar à estrela</p>
+            <p class="text-slate-500 text-sm">Arraste os blocos na ordem correta!</p>
           </div>
-         
-          <div class="bg-gradient-to-b from-blue-50 to-indigo-50 rounded-2xl p-6 mb-6 border-2 border-blue-200">
-            <div class="flex items-center justify-between mb-4">
-              <span class="text-4xl">🤖</span>
-              <span class="text-2xl">→ → ↑ →</span>
-              <span class="text-4xl">⭐</span>
-            </div>
-            <div class="text-sm text-slate-700 text-center mb-3 font-semibold">Caminho esperado</div>
-            <div class="bg-white rounded-lg p-3 text-xs text-slate-600 text-center">
-              Andar → Andar → Virar à esquerda → Andar
-            </div>
-          </div>
-
+          
           <div class="mb-6">
-            <p class="text-sm text-slate-700 font-semibold mb-3">📦 Blocos Disponíveis:</p>
-            <div class="grid grid-cols-3 gap-2">
-              <button class="bloco-btn bg-gradient-to-br from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-3 py-3 rounded-lg font-semibold transition-all shadow-md" data-step="1" onclick="addBlocoStep('1')">
-                <div class="text-lg">▶️</div>
-                <div class="text-xs">Andar</div>
-              </button>
-              <button class="bloco-btn bg-gradient-to-br from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white px-3 py-3 rounded-lg font-semibold transition-all shadow-md" data-step="2" onclick="addBlocoStep('2')">
-                <div class="text-lg">🔄</div>
-                <div class="text-xs">Virar</div>
-              </button>
-              <button class="bloco-btn bg-gradient-to-br from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-3 py-3 rounded-lg font-semibold transition-all shadow-md" data-step="3" onclick="addBlocoStep('3')">
-                <div class="text-lg">⏸️</div>
-                <div class="text-xs">Esperar</div>
-              </button>
+            <p class="text-slate-600 font-semibold mb-4 text-center">Objetivo: Faça o robô chegar na estrela</p>
+            <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 text-center">
+              <div style="font-size: 3rem; margin: 1rem 0;">🤖 ➡️ ⭐</div>
+              <div class="flex items-center justify-center gap-2 mt-4">
+                <span class="text-2xl">Passos:</span>
+                <span id="blocoSteps" class="text-3xl font-bold text-blue-600">0/3</span>
+              </div>
             </div>
           </div>
 
-          <div class="mb-6">
-            <p class="text-sm text-slate-700 font-semibold mb-3">🎯 Seu Programa (${blocoSequence.length}/4 blocos):</p>
-            <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-300 rounded-xl p-4 min-h-[80px]" id="blocoSequence">
-              <div class="text-slate-400 text-sm italic text-center py-4">Clique nos blocos para criar uma sequência...</div>
+          <div class="bg-slate-50 rounded-xl p-4 mb-6">
+            <p class="text-sm text-slate-600 font-semibold mb-3">Blocos Disponíveis:</p>
+            <div class="flex flex-wrap gap-2" id="blocoAvailable">
+              <button class="bloco-btn bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-semibold transition-all" data-step="1">▶️ Andar</button>
+              <button class="bloco-btn bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded-lg font-semibold transition-all" data-step="2">🔄 Virar</button>
+              <button class="bloco-btn bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg font-semibold transition-all" data-step="3">⏸️ Esperar</button>
             </div>
           </div>
 
-          <div class="bg-yellow-50 border-l-4 border-yellow-500 rounded p-3 mb-6">
-            <p class="text-xs text-slate-700"><strong>💡 Dica:</strong> O robô precisa fazer 4 movimentos: andar 2 vezes, virar uma vez, depois andar mais uma vez!</p>
+          <div class="bg-blue-50 border-2 border-blue-300 rounded-xl p-4 mb-6 min-h-[100px]">
+            <p class="text-sm text-slate-600 font-semibold mb-2">Sequência (clique nos blocos acima):</p>
+            <div id="blocoSequence" class="flex flex-wrap gap-2">
+              <span class="text-slate-400 text-sm italic">Selecione os blocos...</span>
+            </div>
           </div>
 
-          <div class="flex gap-3">
-            <button onclick="resetBlocoGame()" class="flex-1 py-3 rounded-xl border-2 border-slate-300 text-slate-600 font-semibold hover:bg-slate-100 transition-all">
+          <div class="flex gap-4">
+            <button onclick="resetBlocoGame()" class="flex-1 py-3 rounded-xl border-2 border-slate-200 text-slate-600 font-semibold hover:bg-slate-50 transition-all">
               Limpar
             </button>
-            <button onclick="removeBlocoStep()" class="flex-1 py-3 rounded-xl border-2 border-red-300 text-red-600 font-semibold hover:bg-red-50 transition-all">
-              ← Desfazer
-            </button>
             <button onclick="checkBlocoGame()" class="flex-1 py-3 rounded-xl btn-primary text-white font-semibold">
-              ▶️ Executar (100 pts)
+              Verificar (100 pts)
             </button>
           </div>
         </div>
       `;
     }
 
-    function addBlocoStep(step) {
-      if (blocoSequence.length < 4) {
-        blocoSequence.push(step);
-        updateBlocoDisplay();
-      } else {
-        showToast('❌ Máximo de 4 blocos!');
-      }
+    let blocoSequence = [];
+    function setupBlocoGame() {
+      document.querySelectorAll('.bloco-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          blocoSequence.push(btn.dataset.step);
+          updateBlocoDisplay();
+        });
+      });
     }
-
-    function removeBlocoStep() {
-      if (blocoSequence.length > 0) {
-        blocoSequence.pop();
-        updateBlocoDisplay();
-      }
-    }
-
     function updateBlocoDisplay() {
       const display = document.getElementById('blocoSequence');
       if (blocoSequence.length === 0) {
-        display.innerHTML = '<div class="text-slate-400 text-sm italic text-center py-4">Clique nos blocos para criar uma sequência...</div>';
+        display.innerHTML = '<span class="text-slate-400 text-sm italic">Selecione os blocos...</span>';
       } else {
-        const icons = { '1': ['▶️ Andar', 'bg-green-500'], '2': ['🔄 Virar', 'bg-purple-500'], '3': ['⏸️ Esperar', 'bg-orange-500'] };
         display.innerHTML = blocoSequence.map((step, idx) => {
-          const [label, color] = icons[step];
-          return `<span class="${color} text-white px-3 py-2 rounded-lg text-sm font-semibold inline-block">${idx + 1}. ${label}</span>`;
-        }).join(' ');
+          const icons = ['▶️ Andar', '🔄 Virar', '⏸️ Esperar'];
+          return `<span class="bg-blue-500 text-white px-3 py-1 rounded-lg text-sm font-semibold">${icons[step-1]}</span>`;
+        }).join('');
       }
+      document.getElementById('blocoSteps').textContent = `${blocoSequence.length}/3`;
     }
-
     function resetBlocoGame() {
       blocoSequence = [];
       updateBlocoDisplay();
     }
-
     function checkBlocoGame() {
-      if (JSON.stringify(blocoSequence) === JSON.stringify(blocoCorrect)) {
+      if (blocoSequence.length === 3 && blocoSequence[0] === '1' && blocoSequence[1] === '2' && blocoSequence[2] === '1') {
         addPoints(100);
         closeModal();
-        showToast('🎉 Perfeito! Robô chegou na estrela! +100 pontos!');
-      } else if (blocoSequence.length === 0) {
-        showToast('❌ Você precisa adicionar blocos!');
-      } else if (blocoSequence.length !== 4) {
-        showToast(`❌ Sequência incompleta! Você tem ${blocoSequence.length}/4 blocos.`);
+        showToast('🎉 Perfeito! +100 pontos!');
       } else {
-        showToast('❌ Ordem incorreta! O robô não chegou. Tente novamente!');
+        showToast('❌ Sequência incorreta! Tente novamente.');
+        resetBlocoGame();
       }
     }
 
-    // JOGO 2: HTML Builder - MELHORADO
+    // JOGO 2: HTML Builder
     function renderHTMLGame() {
       return `
-        <div class="p-8 max-w-2xl">
+        <div class="p-8">
           <div class="text-center mb-6">
             <div class="text-5xl mb-3">💻</div>
             <h2 class="text-2xl font-bold text-slate-800" style="font-family: 'Space Grotesk', sans-serif;">HTML Builder Game</h2>
             <p class="text-slate-500 text-sm">Complete a estrutura HTML correta</p>
           </div>
 
-          <div class="bg-gradient-to-r from-orange-50 to-red-50 rounded-2xl p-6 mb-6 border-2 border-orange-200">
-            <p class="text-sm text-slate-700 font-semibold mb-3">📝 O que você vê no navegador:</p>
-            <div class="bg-white rounded-lg p-4 border border-slate-200">
-              <p class="text-slate-800 font-semibold">Olá, Mundo!</p>
+          <div class="mb-6">
+            <p class="text-slate-600 font-semibold mb-3">Tarefa: Escolha as tags corretas</p>
+            <div class="bg-slate-100 rounded-xl p-4 mb-4">
+              <p class="text-sm text-slate-700 font-mono bg-white p-3 rounded border-l-4 border-blue-500">
+                &lt;${document.createElement('span').innerHTML = '?'}&gt;
+                <span id="htmlContent">Olá, Mundo!</span>
+                &lt;/${document.createElement('span').innerHTML = '?'}&gt;
+              </p>
             </div>
+            <p class="text-sm text-slate-500 mb-4">Qual tag deveria envolver este texto?</p>
           </div>
-
-          <div class="bg-slate-900 rounded-lg p-4 mb-6 overflow-x-auto">
-            <p class="text-slate-400 text-xs mb-2">💾 Código HTML:</p>
-            <div class="font-mono text-sm text-green-400 whitespace-pre-wrap">
-&lt;<span class="text-yellow-400">?</span>&gt;
-  Olá, Mundo!
-&lt;/<span class="text-yellow-400">?</span>&gt;</div>
-          </div>
-
-          <div class="bg-blue-50 rounded-lg p-4 mb-6 border-l-4 border-blue-500">
-            <p class="text-xs text-slate-700"><strong>🎓 Aprenda:</strong> Tags HTML são usadas para estruturar conteúdo. &lt;p&gt; é para parágrafos, &lt;div&gt; para divisões, &lt;h1&gt; para títulos!</p>
-          </div>
-
-          <p class="text-sm text-slate-700 font-semibold mb-4 text-center">Qual tag deveria envolver este texto?</p>
 
           <div class="grid grid-cols-2 gap-3 mb-6">
-            <button onclick="checkHTML('p')" class="html-option p-4 rounded-xl border-2 border-slate-300 hover:border-green-500 hover:bg-green-50 transition-all text-center group">
-              <div class="font-mono font-bold text-green-600 text-lg">&lt;p&gt;</div>
-              <div class="text-xs text-slate-600 mt-2">Parágrafo de texto</div>
-              <div class="text-xs text-slate-500 mt-1 group-hover:text-slate-700">Usado para blocos de texto normal</div>
+            <button onclick="checkHTML('p')" class="html-option p-4 rounded-lg border-2 border-slate-300 hover:border-blue-500 hover:bg-blue-50 transition-all text-center">
+              <div class="font-mono font-bold text-blue-600">&lt;p&gt;</div>
+              <div class="text-xs text-slate-500 mt-1">Parágrafo</div>
             </button>
-            <button onclick="checkHTML('div')" class="html-option p-4 rounded-xl border-2 border-slate-300 hover:border-blue-500 hover:bg-blue-50 transition-all text-center group">
-              <div class="font-mono font-bold text-blue-600 text-lg">&lt;div&gt;</div>
-              <div class="text-xs text-slate-600 mt-2">Divisão/Container</div>
-              <div class="text-xs text-slate-500 mt-1 group-hover:text-slate-700">Para organizar elementos</div>
+            <button onclick="checkHTML('div')" class="html-option p-4 rounded-lg border-2 border-slate-300 hover:border-blue-500 hover:bg-blue-50 transition-all text-center">
+              <div class="font-mono font-bold text-green-600">&lt;div&gt;</div>
+              <div class="text-xs text-slate-500 mt-1">Divisão</div>
             </button>
-            <button onclick="checkHTML('h1')" class="html-option p-4 rounded-xl border-2 border-slate-300 hover:border-purple-500 hover:bg-purple-50 transition-all text-center group">
-              <div class="font-mono font-bold text-purple-600 text-lg">&lt;h1&gt;</div>
-              <div class="text-xs text-slate-600 mt-2">Título Grande</div>
-              <div class="text-xs text-slate-500 mt-1 group-hover:text-slate-700">Para títulos principais</div>
+            <button onclick="checkHTML('h1')" class="html-option p-4 rounded-lg border-2 border-slate-300 hover:border-blue-500 hover:bg-blue-50 transition-all text-center">
+              <div class="font-mono font-bold text-purple-600">&lt;h1&gt;</div>
+              <div class="text-xs text-slate-500 mt-1">Título</div>
             </button>
-            <button onclick="checkHTML('span')" class="html-option p-4 rounded-xl border-2 border-slate-300 hover:border-orange-500 hover:bg-orange-50 transition-all text-center group">
-              <div class="font-mono font-bold text-orange-600 text-lg">&lt;span&gt;</div>
-              <div class="text-xs text-slate-600 mt-2">Texto Embutido</div>
-              <div class="text-xs text-slate-500 mt-1 group-hover:text-slate-700">Para pequenos trechos</div>
+            <button onclick="checkHTML('span')" class="html-option p-4 rounded-lg border-2 border-slate-300 hover:border-blue-500 hover:bg-blue-50 transition-all text-center">
+              <div class="font-mono font-bold text-orange-600">&lt;span&gt;</div>
+              <div class="text-xs text-slate-500 mt-1">Texto</div>
             </button>
           </div>
 
@@ -995,66 +1133,50 @@
         </div>
       `;
     }
-
     function checkHTML(tag) {
       if (tag === 'p') {
         addPoints(150);
         closeModal();
-        showToast('✅ Correto! &lt;p&gt; é perfeito para parágrafos! +150 pontos!');
+        showToast('✅ Correto! &lt;p&gt; é perfeito! +150 pontos!');
       } else {
         showToast('❌ Tente novamente! Dica: use uma tag de parágrafo.');
       }
     }
 
-    // JOGO 3: Python - MELHORADO
+    // JOGO 3: Python
     function renderPythonGame() {
       return `
-        <div class="p-8 max-w-2xl">
+        <div class="p-8">
           <div class="text-center mb-6">
             <div class="text-5xl mb-3">🐍</div>
             <h2 class="text-2xl font-bold text-slate-800" style="font-family: 'Space Grotesk', sans-serif;">Desafio Python</h2>
-            <p class="text-slate-500 text-sm">Complete o código para exibir uma mensagem</p>
+            <p class="text-slate-500 text-sm">Complete o código</p>
           </div>
 
-          <div class="bg-slate-900 text-white p-4 rounded-lg font-mono text-sm overflow-x-auto mb-6">
-            <div class="mb-2"><span class="text-blue-400">nome</span> <span class="text-white">=</span> <span class="text-green-400">"Alice"</span></div>
-            <div class="mb-2"><span class="text-blue-400">idade</span> <span class="text-white">=</span> <span class="text-yellow-400">15</span></div>
-            <div class="text-red-400"><span class="text-red-300">print</span>(<span class="text-green-400">"Olá, "</span> <span class="text-white">+</span> <span class="text-purple-400">___________</span>)</div>
+          <div class="mb-6 bg-slate-900 text-white p-4 rounded-lg font-mono text-sm overflow-x-auto">
+            <div>nome = <span class="text-green-400">"Alice"</span></div>
+            <div>idade = <span class="text-yellow-400">15</span></div>
+            <div>print(<span class="text-blue-400">"Olá, "</span> + ___________)</div>
           </div>
 
-          <div class="bg-gradient-to-r from-green-50 to-teal-50 rounded-2xl p-6 mb-6 border-2 border-green-200">
-            <p class="text-sm text-slate-700 font-semibold mb-3">📤 Resultado esperado no console:</p>
-            <div class="bg-slate-900 text-green-400 font-mono p-4 rounded text-sm">
-              &gt;&gt;&gt; Olá, Alice
-            </div>
-          </div>
-
-          <div class="bg-blue-50 rounded-lg p-4 mb-6 border-l-4 border-blue-500">
-            <p class="text-xs text-slate-700"><strong>🎓 Aprenda:</strong> Em Python, a função print() exibe texto. Para concatenar (juntar) strings, usamos o símbolo +!</p>
-          </div>
-
-          <p class="text-sm text-slate-700 font-semibold mb-4 text-center">Qual variável completa a mensagem?</p>
+          <p class="text-slate-600 font-semibold mb-4 text-center">O que falta no código?</p>
 
           <div class="grid grid-cols-2 gap-3 mb-6">
-            <button onclick="checkPython('nome')" class="python-option p-4 rounded-xl border-2 border-slate-300 hover:border-green-500 hover:bg-green-50 transition-all text-center group">
-              <div class="font-mono font-bold text-green-600 text-lg">nome</div>
-              <div class="text-xs text-slate-600 mt-2">String com "Alice"</div>
-              <div class="text-xs text-slate-500 mt-1 group-hover:text-slate-700">Armazena um texto</div>
+            <button onclick="checkPython('nome')" class="python-option p-4 rounded-lg border-2 border-slate-300 hover:border-green-500 hover:bg-green-50 transition-all text-center">
+              <div class="font-mono font-bold text-green-600">nome</div>
+              <div class="text-xs text-slate-500 mt-1">Variável</div>
             </button>
-            <button onclick="checkPython('idade')" class="python-option p-4 rounded-xl border-2 border-slate-300 hover:border-blue-500 hover:bg-blue-50 transition-all text-center group">
-              <div class="font-mono font-bold text-blue-600 text-lg">idade</div>
-              <div class="text-xs text-slate-600 mt-2">Integer (número)</div>
-              <div class="text-xs text-slate-500 mt-1 group-hover:text-slate-700">Armazena um número</div>
+            <button onclick="checkPython('idade')" class="python-option p-4 rounded-lg border-2 border-slate-300 hover:border-blue-500 hover:bg-blue-50 transition-all text-center">
+              <div class="font-mono font-bold text-blue-600">idade</div>
+              <div class="text-xs text-slate-500 mt-1">Número</div>
             </button>
-            <button onclick="checkPython('print')" class="python-option p-4 rounded-xl border-2 border-slate-300 hover:border-purple-500 hover:bg-purple-50 transition-all text-center group">
-              <div class="font-mono font-bold text-purple-600 text-lg">print()</div>
-              <div class="text-xs text-slate-600 mt-2">Função</div>
-              <div class="text-xs text-slate-500 mt-1 group-hover:text-slate-700">Exibe mensagens</div>
+            <button onclick="checkPython('print')" class="python-option p-4 rounded-lg border-2 border-slate-300 hover:border-purple-500 hover:bg-purple-50 transition-all text-center">
+              <div class="font-mono font-bold text-purple-600">print()</div>
+              <div class="text-xs text-slate-500 mt-1">Função</div>
             </button>
-            <button onclick="checkPython('input')" class="python-option p-4 rounded-xl border-2 border-slate-300 hover:border-orange-500 hover:bg-orange-50 transition-all text-center group">
-              <div class="font-mono font-bold text-orange-600 text-lg">input()</div>
-              <div class="text-xs text-slate-600 mt-2">Função</div>
-              <div class="text-xs text-slate-500 mt-1 group-hover:text-slate-700">Pede entrada do usuário</div>
+            <button onclick="checkPython('input')" class="python-option p-4 rounded-lg border-2 border-slate-300 hover:border-orange-500 hover:bg-orange-50 transition-all text-center">
+              <div class="font-mono font-bold text-orange-600">input()</div>
+              <div class="text-xs text-slate-500 mt-1">Entrada</div>
             </button>
           </div>
 
@@ -1066,56 +1188,42 @@
         </div>
       `;
     }
-
     function checkPython(answer) {
       if (answer === 'nome') {
         addPoints(150);
         closeModal();
-        showToast('✅ Excelente! Variável "nome" é correta! +150 pontos!');
+        showToast('✅ Excelente! É preciso da variável nome! +150 pontos!');
       } else {
-        showToast('❌ Tente novamente! Dica: você precisa exibir a variável que contém o nome.');
+        showToast('❌ Tente novamente! Dica: precisa de uma variável.');
       }
     }
 
-    // JOGO 4: Informática - MELHORADO
+    // JOGO 4: Informática
     function renderInfoGame() {
       return `
-        <div class="p-8 max-w-2xl">
+        <div class="p-8">
           <div class="text-center mb-6">
             <div class="text-5xl mb-3">🖥️</div>
             <h2 class="text-2xl font-bold text-slate-800" style="font-family: 'Space Grotesk', sans-serif;">Missão Informática</h2>
-            <p class="text-slate-500 text-sm">Identifique os componentes do computador</p>
-          </div>
-
-          <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-6 mb-6 border-2 border-purple-200">
-            <p class="text-sm text-slate-700 font-semibold mb-3">❓ Pergunta:</p>
-            <div class="text-center">
-              <p class="text-lg font-bold text-slate-800">Qual é o "cérebro" do computador?</p>
-              <p class="text-xs text-slate-600 mt-2">Ele processa todas as informações e executa as operações</p>
-            </div>
+            <p class="text-slate-500 text-sm">Relacione cada componente com sua função</p>
           </div>
 
           <div class="space-y-3 mb-6">
-            <button onclick="checkInfo('cpu')" class="info-match w-full p-5 rounded-xl border-2 border-slate-300 hover:border-blue-500 hover:bg-blue-50 transition-all text-left group">
-              <div class="font-bold text-slate-800 text-lg group-hover:text-blue-600">🔷 CPU (Processador)</div>
-              <div class="text-sm text-slate-600 mt-2">Processa informações e executa instruções do programa</div>
-              <div class="text-xs text-slate-500 mt-2">Velocidade medida em GHz - quanto maior, mais rápido!</div>
-            </button>
-            <button onclick="checkInfo('ram')" class="info-match w-full p-5 rounded-xl border-2 border-slate-300 hover:border-green-500 hover:bg-green-50 transition-all text-left group">
-              <div class="font-bold text-slate-800 text-lg group-hover:text-green-600">💾 RAM (Memória)</div>
-              <div class="text-sm text-slate-600 mt-2">Armazena dados temporários enquanto o programa está aberto</div>
-              <div class="text-xs text-slate-500 mt-2">Quanto mais RAM, mais programas você pode usar simultaneamente</div>
-            </button>
-            <button onclick="checkInfo('hd')" class="info-match w-full p-5 rounded-xl border-2 border-slate-300 hover:border-orange-500 hover:bg-orange-50 transition-all text-left group">
-              <div class="font-bold text-slate-800 text-lg group-hover:text-orange-600">📁 Armazenamento (HD/SSD)</div>
-              <div class="text-sm text-slate-600 mt-2">Armazena seus arquivos, fotos, vídeos e programas permanentemente</div>
-              <div class="text-xs text-slate-500 mt-2">SSD é mais rápido que HD tradicional</div>
-            </button>
+            <div class="info-match p-4 rounded-lg border-2 border-slate-300 hover:border-blue-500 bg-gradient-to-r from-blue-50 to-transparent transition-all cursor-pointer" onclick="checkInfo('cpu')">
+              <div class="font-bold text-slate-800">CPU</div>
+              <div class="text-sm text-slate-500">Processador do computador</div>
+            </div>
+            <div class="info-match p-4 rounded-lg border-2 border-slate-300 hover:border-green-500 bg-gradient-to-r from-green-50 to-transparent transition-all cursor-pointer" onclick="checkInfo('ram')">
+              <div class="font-bold text-slate-800">RAM</div>
+              <div class="text-sm text-slate-500">Memória rápida e temporária</div>
+            </div>
+            <div class="info-match p-4 rounded-lg border-2 border-slate-300 hover:border-purple-500 bg-gradient-to-r from-purple-50 to-transparent transition-all cursor-pointer" onclick="checkInfo('hd')">
+              <div class="font-bold text-slate-800">HD</div>
+              <div class="text-sm text-slate-500">Armazena seus arquivos</div>
+            </div>
           </div>
 
-          <div class="bg-blue-50 rounded-lg p-4 mb-6 border-l-4 border-blue-500">
-            <p class="text-xs text-slate-700"><strong>🎓 Dica:</strong> Se a CPU é o "cérebro", a RAM é a "memória imediata" e o HD é a "memória permanente"!</p>
-          </div>
+          <p class="text-sm text-slate-500 text-center mb-6">Clique na resposta correta para: qual é o "cérebro" do computador?</p>
 
           <div class="flex gap-4">
             <button onclick="closeModal()" class="flex-1 py-3 rounded-xl border-2 border-slate-200 text-slate-600 font-semibold hover:bg-slate-50 transition-all">
@@ -1125,77 +1233,43 @@
         </div>
       `;
     }
-
     function checkInfo(answer) {
       if (answer === 'cpu') {
         addPoints(100);
         closeModal();
-        showToast('🎯 Correto! CPU é o cérebro do computador! +100 pontos!');
+        showToast('🎯 Correto! CPU é o cérebro! +100 pontos!');
       } else {
-        showToast('❌ Tente novamente! O "cérebro" processa informações muito rapidamente.');
+        showToast('❌ Tente novamente! A CPU é o processador.');
       }
     }
 
-    // JOGO 5: Segurança Digital - MELHORADO
+    // JOGO 5: Segurança Digital
     function renderSegurancaGame() {
       return `
-        <div class="p-8 max-w-2xl">
+        <div class="p-8">
           <div class="text-center mb-6">
             <div class="text-5xl mb-3">🔐</div>
             <h2 class="text-2xl font-bold text-slate-800" style="font-family: 'Space Grotesk', sans-serif;">Segurança Digital</h2>
             <p class="text-slate-500 text-sm">Identifique a senha MAIS SEGURA</p>
           </div>
 
-          <div class="bg-gradient-to-r from-red-50 to-orange-50 rounded-2xl p-6 mb-6 border-2 border-red-200">
-            <p class="text-sm text-slate-700 font-semibold mb-3">🚨 Desafio:</p>
-            <div class="text-center">
-              <p class="text-lg font-bold text-slate-800">Qual senha é MAIS SEGURA?</p>
-              <p class="text-xs text-slate-600 mt-2">Senhas fracas são fáceis de descobrir. Senhas fortes protegem seus dados!</p>
-            </div>
-          </div>
-
           <div class="space-y-3 mb-6">
-            <button onclick="checkSeguranca('fraca')" class="seg-option w-full p-5 rounded-xl border-2 border-slate-300 hover:border-red-500 hover:bg-red-50 transition-all text-left group">
-              <div class="flex items-center gap-3">
-                <div class="text-2xl">❌</div>
-                <div>
-                  <div class="font-bold text-slate-800 text-lg group-hover:text-red-600">123456</div>
-                  <div class="text-xs text-slate-600 mt-1">Sequência numérica comum</div>
-                </div>
-              </div>
-              <div class="text-xs text-red-600 ml-11 mt-2">🚫 Risco: Muito fácil de adivinhar - número mais usado do mundo!</div>
+            <button onclick="checkSeguranca('fraca')" class="seg-option w-full p-4 rounded-lg border-2 border-slate-300 hover:border-red-500 hover:bg-red-50 transition-all text-left">
+              <div class="font-bold text-slate-800">❌ 123456</div>
+              <div class="text-sm text-slate-500">Muito comum e fraca</div>
             </button>
-            <button onclick="checkSeguranca('media')" class="seg-option w-full p-5 rounded-xl border-2 border-slate-300 hover:border-yellow-500 hover:bg-yellow-50 transition-all text-left group">
-              <div class="flex items-center gap-3">
-                <div class="text-2xl">⚠️</div>
-                <div>
-                  <div class="font-bold text-slate-800 text-lg group-hover:text-yellow-600">Alice2024</div>
-                  <div class="text-xs text-slate-600 mt-1">Palavra comum + números</div>
-                </div>
-              </div>
-              <div class="text-xs text-yellow-600 ml-11 mt-2">⚠️ Risco: Usa nome próprio e ano - fácil de relacionar com você!</div>
+            <button onclick="checkSeguranca('media')" class="seg-option w-full p-4 rounded-lg border-2 border-slate-300 hover:border-yellow-500 hover:bg-yellow-50 transition-all text-left">
+              <div class="font-bold text-slate-800">⚠️ Alice2024</div>
+              <div class="text-sm text-slate-500">Usa nome + número</div>
             </button>
-            <button onclick="checkSeguranca('forte')" class="seg-option w-full p-5 rounded-xl border-2 border-slate-300 hover:border-green-500 hover:bg-green-50 transition-all text-left group">
-              <div class="flex items-center gap-3">
-                <div class="text-2xl">✅</div>
-                <div>
-                  <div class="font-bold text-green-600 text-lg group-hover:text-green-700">G7@mK9#xL2pQ</div>
-                  <div class="text-xs text-slate-600 mt-1">Caracteres variados</div>
-                </div>
-              </div>
-              <div class="text-xs text-green-600 ml-11 mt-2">✅ Forte: Maiúsculas + minúsculas + números + símbolos especiais!</div>
+            <button onclick="checkSeguranca('forte')" class="seg-option w-full p-4 rounded-lg border-2 border-slate-300 hover:border-green-500 hover:bg-green-50 transition-all text-left">
+              <div class="font-bold text-green-600">✅ G7@mK9#xL2pQ</div>
+              <div class="text-sm text-slate-500">Mistura maiúsculas, números e símbolos</div>
             </button>
           </div>
 
-          <div class="bg-gradient-to-r from-green-50 to-teal-50 rounded-lg p-4 mb-6 border-l-4 border-green-500">
-            <p class="text-xs text-slate-700 mb-2"><strong>🎓 Boas práticas de senha:</strong></p>
-            <ul class="text-xs text-slate-600 space-y-1">
-              <li>✅ Pelo menos 8 caracteres (quanto mais, melhor!)</li>
-              <li>✅ Misture MAIÚSCULAS e minúsculas</li>
-              <li>✅ Inclua números e símbolos (!@#$%)</li>
-              <li>❌ Evite nomes, datas e sequências óbvias</li>
-              <li>❌ Use senhas diferentes para cada conta</li>
-            </ul>
+          <div class="bg-blue-50 rounded-lg p-4 mb-6 border-l-4 border-blue-500">
+            <p class="text-sm text-slate-700"><strong>💡 Dica:</strong> Uma boa senha tem maiúsculas, minúsculas, números e símbolos!</p>
           </div>
 
           <div class="flex gap-4">
@@ -1206,14 +1280,13 @@
         </div>
       `;
     }
-
     function checkSeguranca(answer) {
       if (answer === 'forte') {
         addPoints(200);
         closeModal();
-        showToast('🔐 Segurança em primeiro lugar! Excelente! +200 pontos!');
+        showToast('🔐 Segurança em primeiro lugar! +200 pontos!');
       } else {
-        showToast('❌ Tente novamente! Procure uma senha com mais caracteres variados.');
+        showToast('❌ Tente novamente! Procure uma senha com mais caracteres especiais.');
       }
     }
 
@@ -1221,7 +1294,7 @@
       if (currentQuestion >= quizQuestions.length) {
         return renderQuizResult();
       }
-     
+      
       const q = quizQuestions[currentQuestion];
       return `
         <div class="p-8">
@@ -1230,11 +1303,11 @@
             <h2 class="text-xl font-bold text-slate-800" style="font-family: 'Space Grotesk', sans-serif;">Quiz Tech</h2>
             <span class="text-sm text-slate-500">Pergunta ${currentQuestion + 1} de ${quizQuestions.length}</span>
           </div>
-         
+          
           <div class="bg-slate-100 rounded-xl p-6 mb-6">
             <p class="text-lg font-semibold text-slate-800 text-center">${q.question}</p>
           </div>
-         
+          
           <div class="space-y-3 mb-6">
             ${q.options.map((opt, idx) => `
               <button onclick="answerQuestion(${idx})" class="w-full p-4 rounded-xl border-2 border-slate-200 text-left hover:border-blue-500 hover:bg-blue-50 transition-all">
@@ -1243,7 +1316,7 @@
               </button>
             `).join('')}
           </div>
-         
+          
           <div class="flex items-center justify-between text-sm text-slate-500">
             <span>Pontuação: ${quizScore}/${currentQuestion * 50}</span>
             <button onclick="closeModal()" class="text-slate-400 hover:text-slate-600">Sair</button>
@@ -1255,7 +1328,7 @@
     function renderQuizResult() {
       const totalPoints = quizQuestions.length * 50;
       const percentage = Math.round((quizScore / totalPoints) * 100);
-     
+      
       return `
         <div class="p-8 text-center">
           <div class="text-6xl mb-4">${percentage >= 70 ? '🎉' : '📚'}</div>
@@ -1263,12 +1336,12 @@
             ${percentage >= 70 ? 'Parabéns!' : 'Continue Praticando!'}
           </h2>
           <p class="text-slate-600 mb-6">Você acertou ${percentage}% das perguntas!</p>
-         
+          
           <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 mb-6">
             <div class="text-3xl font-bold text-blue-600 mb-1">+${quizScore} pts</div>
             <p class="text-slate-500 text-sm">Pontos conquistados</p>
           </div>
-         
+          
           <div class="flex gap-4">
             <button onclick="closeModal()" class="flex-1 py-3 rounded-xl border-2 border-slate-200 text-slate-600 font-semibold hover:bg-slate-50 transition-all">
               Fechar
@@ -1288,7 +1361,7 @@
       }
       currentQuestion++;
       modalContent.innerHTML = renderQuizQuestion();
-     
+      
       if (currentQuestion >= quizQuestions.length) {
         addPoints(quizScore);
       }
@@ -1311,7 +1384,7 @@
     function simulateGameComplete(gameId) {
       const game = games[gameId];
       if (!game) return;
-     
+      
       addPoints(game.points);
       closeModal();
       showToast(`Você ganhou ${game.points} pontos!`);
@@ -1320,16 +1393,16 @@
     function addPoints(points) {
       gameState.points += points;
       gameState.gamesPlayed++;
-     
+      
       // Update UI
       document.getElementById('totalPoints').textContent = gameState.points.toLocaleString();
       document.getElementById('rankPoints').textContent = gameState.points.toLocaleString();
-     
+      
       // Update progress
       const progress = Math.min(100, Math.round((gameState.points / 5000) * 100));
       document.getElementById('progressPercent').textContent = progress + '%';
       document.getElementById('progressBar').style.width = progress + '%';
-     
+      
       // Update level
       if (gameState.points >= 4000) {
         gameState.level = 'Avançado';
@@ -1337,7 +1410,7 @@
         gameState.level = 'Intermediário';
       }
       document.getElementById('userLevel').textContent = gameState.level;
-     
+      
       // Update rank
       const rank = Math.max(1, 15 - Math.floor(gameState.points / 500));
       document.getElementById('userRank').textContent = rank;
@@ -1348,7 +1421,7 @@
       const toastMessage = document.getElementById('toastMessage');
       toastMessage.textContent = message;
       toast.classList.remove('hidden');
-     
+      
       setTimeout(() => {
         toast.classList.add('hidden');
       }, 3000);
@@ -1393,6 +1466,6 @@
     document.getElementById('totalPoints').textContent = gameState.points.toLocaleString();
     document.getElementById('rankPoints').textContent = gameState.points.toLocaleString();
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d3176471036f19f',t:'MTc3MTk2MjMxMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d31b76ac3be4585',t:'MTc3MTk2NDk4MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 
 </html>
